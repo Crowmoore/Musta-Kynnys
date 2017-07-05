@@ -48,10 +48,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void createDistanceText() {
-        distanceCalculator = new DistanceCalculator();
-        //double kynyDistance = distanceCalculator.DistanceToKynnys();
-        //String message = "You are now " + Double.toString(kynyDistance) + " meters away from Kyny";
-        String message = "not implemented";
+        distanceCalculator = new DistanceCalculator(this);
+        double kynyDistance = distanceCalculator.DistanceToKynnys();
+        String message = "You are now " + Double.toString(kynyDistance) + " meters away from Kyny";
 
         TextView tv = (TextView)findViewById(R.id.DistanceText);
         tv.setText(message);

@@ -7,21 +7,28 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 
-public class DistanceCalculator extends Activity {
+public class DistanceCalculator {
 
     public static final double KynnysLatitude = 62.240505;
     public static final double KynnysLongitude = 25.752150;
+
+    Context context;
+
+    public DistanceCalculator(Context context) {
+        this.context = context;
+    }
 
     /**
      * @return Current distance to Kynnys
      */
     public double DistanceToKynnys() {
         LocationManager lm;
-        lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        lm = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(
-                this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
