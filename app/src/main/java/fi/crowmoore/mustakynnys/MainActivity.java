@@ -3,6 +3,7 @@ package fi.crowmoore.mustakynnys;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import com.facebook.login.LoginManager;
 
 public class MainActivity extends AppCompatActivity {
+
+    private DistanceCalculator distanceCalculator = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         new DownloadImage((ImageView)findViewById(R.id.profilePic)).execute(imageUrl);
 
         createLogoutButton();
+        createDistanceText();
     }
 
     private void createLogoutButton() {
@@ -41,5 +45,15 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void createDistanceText() {
+        distanceCalculator = new DistanceCalculator();
+        //double kynyDistance = distanceCalculator.DistanceToKynnys();
+        //String message = "You are now " + Double.toString(kynyDistance) + " meters away from Kyny";
+        String message = "not implemented";
+
+        TextView tv = (TextView)findViewById(R.id.DistanceText);
+        tv.setText(message);
     }
 }
