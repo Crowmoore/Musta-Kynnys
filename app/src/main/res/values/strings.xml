@@ -2,4 +2,6 @@
     <string name="app_name">Musta Kynnys</string>
     <string name="facebook_app_id">1440466729333918</string>
     <string name="fb_login_protocol_scheme">fb1440466729333918</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>
