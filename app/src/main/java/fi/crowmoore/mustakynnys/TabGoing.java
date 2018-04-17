@@ -11,7 +11,7 @@ import android.widget.TextView;
  * Created by Crowmoore on 07-Jul-17.
  */
 
-public class Tab2Arriving extends Fragment {
+public class TabGoing extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

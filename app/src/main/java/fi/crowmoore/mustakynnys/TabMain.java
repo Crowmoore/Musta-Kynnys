@@ -1,7 +1,7 @@
 package fi.crowmoore.mustakynnys;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +12,9 @@ import android.widget.TextView;
  * Created by Crowmoore on 07-Jul-17.
  */
 
-public class Tab1Me extends Fragment {
+public class TabMain extends Fragment {
 
     View rootView;
-    DistanceCalculator distanceCalculator;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,16 +31,6 @@ public class Tab1Me extends Fragment {
 
         new DownloadImage((ImageView)rootView.findViewById(R.id.profilePic)).execute(imageUrl);
 
-        createDistanceText();
         return rootView;
-    }
-
-    private void createDistanceText() {
-        distanceCalculator = new DistanceCalculator(rootView.getContext());
-        double kynyDistance = distanceCalculator.DistanceToKynnys();
-        String message = "You are now " + Double.toString(kynyDistance) + " meters away from Kyny";
-
-        TextView tv = (TextView)rootView.findViewById(R.id.DistanceText);
-        tv.setText(message);
     }
 }

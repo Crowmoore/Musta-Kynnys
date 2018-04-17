@@ -1,3 +1,6 @@
+# AndroidManifest
+app/manifests/AndroidManifest.xml
+
 # Built application files
 *.apk
 *.ap_
@@ -37,6 +40,7 @@ captures/
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/gradle.xml
+.idea/misc.xml
 .idea/dictionaries
 .idea/libraries
 
